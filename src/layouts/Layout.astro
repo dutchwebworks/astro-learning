@@ -19,13 +19,15 @@ let {title} = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="wrapper">
+		<section class="wrapper">
             <Header />
 
-            <slot />
+			<main>
+				<slot />
+			</main>
 
             <Footer />
-        </div>
+        </section>
 	</body>
 </html>
 
