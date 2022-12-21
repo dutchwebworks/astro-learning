@@ -8,7 +8,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
         <menu>
             <li><a href="/" class={currentPath === "" ? "is-active" : ""}>Home</a></li>
             <li><a href="/blog" class={currentPath.startsWith('blog') ? "is-active" : ""}>Blog</a></li>
-            <li><a href="/about" class={currentPath === "about" ? "is-active" : ""}>About</a></li>
+            <li><a href="/about" class={currentPath.startsWith('about') ? "is-active" : ""}>About</a></li>
         </menu>
     </nav>
 </header>

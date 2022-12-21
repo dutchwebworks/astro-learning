@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/Layout.astro"
+layout: "../../layouts/default.astro"
 title: "Hello World!"
 description: "Hello World description"
 pubDate: "Dec 21 2022"
