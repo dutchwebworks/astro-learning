@@ -1,6 +1,6 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self';"
+    Content-Security-Policy = "default-src 'self'; img-src https://*.cloudfront.net"
     X-Content-Type-Options = "nosniff"
     X-XSS-Protection = "1; mode=block"
