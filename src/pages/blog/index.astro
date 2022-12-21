@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
+
+// Use Astro.glob() to fetch all posts, and then sort them by date.
+const posts = (await Astro.glob('./*.{md,mdx}')).sort(
+	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+);
+---
+
+<Layout title="Blog">
+    <main>
+        <h1>Blog posts - {SITE_TITLE}</h1>
+
+        <ul>
+            {
+                posts.map((post) => (
+                    <li>
+                        <a href={post.url}>{post.frontmatter.title}</a>
+
+                        <time datetime={post.frontmatter.pubDate}>
+                            {new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
+                                year: 'numeric',
+                                month: 'short',
+                                day: 'numeric',
+                            })}
+                        </time>
+                    </li>
+                ))
+            }
+        </ul>
+    </main>
+</Layout>
