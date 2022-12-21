@@ -5,12 +5,5 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://astro-learning.dutchwebworks.nl",
-  integrations: [
-    tailwind({
-      config: {
-        // applyBaseStyles: false
-      },
-    }),
-    sitemap(),
-  ],
+  integrations: [tailwind(), sitemap()],
 });
