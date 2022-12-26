@@ -1,0 +1,31 @@
+---
+import "../styles/tailwind.css";
+import "../styles/global.css";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+
+export interface Props {
+  title: string;
+  description: string;
+  permalink: string;
+}
+
+const { title, description, permalink } = Astro.props;
+---
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>{title} - {SITE_TITLE}</title>
+
+    <meta name="description" content={description}>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="canonical" href={permalink}>
+
+    <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>

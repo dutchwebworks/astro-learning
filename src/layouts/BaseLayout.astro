@@ -1,0 +1,67 @@
+---
+import Head from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+  permalink: string;
+  current?: string;
+}
+
+const { title, description, permalink, current } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<Head title={title} description={description} permalink={permalink} current={current} />
+	
+	<body>
+		<section class="wrapper">
+            <Header current="{current}" />
+
+			<main>
+				<slot />
+			</main>
+
+            <Footer />
+        </section>
+
+		<script is:inline>
+			if (window.netlifyIdentity) {
+				window.netlifyIdentity.on("init", user => {
+				if (!user) {
+					window.netlifyIdentity.on("login", () => {
+					document.location.href = "/admin/";
+					});
+				}
+				});
+			}
+			</script>
+	</body>
+</html>
+
+<style>
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+h1 {
+    color: hotpink;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wrapper {
+    max-width: 600px;
+    padding: 0 20px;
+    margin: 0 auto;
+}	
+</style>

@@ -1,14 +1,18 @@
 ---
-import Layout from '../layouts/default.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_TITLE } from '../config';
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 );
+
+const title = 'Blog';
+const description = 'Latest articles';
+const permalink = `${Astro.site.href}blog`;
 ---
 
-<Layout title="Blog">
+<BaseLayout title={title} description={description} permalink={permalink}>
     <main>
         <h1>Blog posts - {SITE_TITLE}</h1>
 
@@ -30,7 +34,7 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
             }
         </ul>
     </main>
-</Layout>
+</BaseLayout>
 
 <style>
 ul a {
