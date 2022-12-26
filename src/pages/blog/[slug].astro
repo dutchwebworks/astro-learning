@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import getPostData from '../../utils/getPostData';
+import { BLOG_PATH } from '../../config';
+
+export async function getStaticPaths() {
+  const posts = await Astro.glob('../../data/*.md');
+  
+  return posts.map(p => ({
+    params: { 
+      slug: p.file.split('/').pop().split('.').shift() 
+    },
+    props: { 
+      post: p 
+    }
+  }));
+}
+
+const { Content, frontmatter } = Astro.props.post;
+const { title, author, image, imageAlt, description, pubDate } = frontmatter;
+const { slug } = getPostData(Astro.props.post);
+const permalink = `${Astro.site.href}${BLOG_PATH}/${slug}`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink}>
+    <main>
+        <p>Date: {pubDate}</p>
+
+        <p>By: {author}</p>
+
+        <h1>{title}</h1>
+
+        <img src={image} alt={imageAlt}>
+
+        <article>
+            <Content />
+        </article>        
+    </main>
+</BaseLayout>
+
+<style is:global>
+h1 {
+  color: hotpink;
+  font-size: 3rem;
+}
+h2 {
+  color: deepskyblue;
+  font-size: 2rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+</style>

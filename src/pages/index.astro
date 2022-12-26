@@ -1,16 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "Welcome";
-const description = "Build with Astro"
+const title = "Build with Astro";
+const description = "Learning about building a blog site with Astro"
 const permalink = `${Astro.site.href}`;
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
     <main>
-        <img src="/img/placeholder-hero.jpg" class="mt-3" width="600" height="337.6" alt="Build with Astro">
+        <img src="/assets/img/placeholder-hero.jpg" class="mt-3" width="600" height="337.6" alt="Build with Astro">
 
-        <h1>Build with Astro</h1>
+        <h1>{title}</h1>
 
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque explicabo recusandae nam quia dolores animi cupiditate debitis autem dolorum quae.</p>
     </main>
