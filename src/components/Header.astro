@@ -3,7 +3,7 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
-<header>
+<header class="flex justify-between">
     <nav>
         <menu>
             <li><a href="/" class={currentPath === "" ? "is-active" : ""}>Home</a></li>
@@ -11,13 +11,18 @@ const currentPath = pathname.slice(1); // remove the first "/"
             <li><a href="/about" class={currentPath.startsWith('about') ? "is-active" : ""}>About</a></li>
         </menu>
     </nav>
+
+    <div><button id="toggleDarkMode">Toggle Dark-mode</button></div>
 </header>
 
 <style>
 header {
-    margin: 20px 0;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid var(--body-color-alt);
+    position: sticky;
+    top: 0;
+    margin: 0 0 20px 0;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid var(--body-text-color-alt);
+    background-color: var(--body-bg-color);
 }
 header menu {
     display: flex;
@@ -34,11 +39,21 @@ header li + li {
 }
 
 header a {
-    color: var(--secondary-brand);
+    color: var(--secondary-brand-color);
 }
 
 header a.is-active,
 header a:hover {
-    color: var(--primary-brand);
+    color: var(--primary-brand-color);
+}
+
+#toggleDarkMode {
+    border: 1px solid var(--body-text-color);
+    background-color: transparent;
+    font-size: .8rem;
+    padding: 5px 10px;
+    color: var(--body-text-color);
+    border-radius: 8px;
+    cursor: pointer;
 }
 </style>

@@ -32,10 +32,16 @@ const permalink = `${Astro.site.href}${BLOG_PATH}/${slug}`;
 
         <h1>{title}</h1>
 
-        <img src={image} alt={imageAlt}>
+        <img src={image} class="featuredImage" alt={imageAlt}>
 
         <article>
-            <Content />
+          <Content />
         </article>        
     </main>
 </BaseLayout>
+
+<style>
+.featuredImage {
+  border-radius: 8px;
+}
+</style>

@@ -19,6 +19,8 @@ const { title, description, permalink } = Astro.props;
 
 	    <BaseHead title={title} description={description} permalink={permalink} />
 
+		<script src="/js/darkmode.js" defer></script>
+
         <slot name="end-head" />
     </head>
 	
@@ -51,7 +53,7 @@ const { title, description, permalink } = Astro.props;
 
 <style>
 .wrapper {
-    max-width: var(--site-width);
+    max-width: var(--site-max-width);
     padding: 0 20px;
     margin: 0 auto;
 }	

@@ -24,9 +24,9 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
 
                         <p>{post.frontmatter.description}</p>
 
-                        <div class="post-item-footer">
+                        <p class="post-item-footer">
                             <span class="post-item-date">— {post.frontmatter.pubDate}</span>
-                        </div>
+                        </p>
                     </div>
                 </div>
             )
