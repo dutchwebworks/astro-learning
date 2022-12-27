@@ -18,11 +18,6 @@ Learning about Astro static-site-generator. With a Netlify deployment and CMS fo
 
 ## NetlifyCMS
 
-Go to the admin panel and login with (an invited) Github account
+    /admin/
 
-    https://11ty-learning.dutchwebworks.nl/admin/
-
-
-### Note: 
-
-`/admin#/` doesn't work. Use `/admin/#`
+Note: `/admin#/` doesn't work. Use `/admin/#`
