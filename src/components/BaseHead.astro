@@ -13,19 +13,17 @@ export interface Props {
 const { title, description, permalink } = Astro.props;
 ---
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
 
-    <title>{title} - {SITE_TITLE}</title>
+<title>{title} - {SITE_TITLE}</title>
 
-    <meta name="description" content={description}>
+<meta name="description" content={description}>
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <meta name="generator" content={Astro.generator} />
+<meta name="generator" content={Astro.generator} />
 
-    <link rel="canonical" href={permalink}>
+<link rel="canonical" href={permalink}>
 
-    <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
+<script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
