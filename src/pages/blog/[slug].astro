@@ -4,7 +4,7 @@ import getPostData from '../../utils/getPostData';
 import { BLOG_PATH } from '../../config';
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob('../../data/*.md');
+  const posts = await Astro.glob('../../blog-posts/*.md');
   
   return posts.map(p => ({
     params: { 

@@ -3,10 +3,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_TITLE, BLOG_PATH } from '../../config';
 
 const title = 'Blog';
-const description = 'Latest articles';
+const description = 'Latest blog articles';
 const permalink = `${Astro.site.href}${BLOG_PATH}`;
 
-let allPosts = await Astro.glob('../../data/*.md');
+let allPosts = await Astro.glob('../../blog-posts/*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 ---
 
