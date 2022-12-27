@@ -3,7 +3,8 @@ pubDate: Dec 21 2022
 title: My first blog post!
 description: We're going to write about my first blog post
 author: Dennis Burger
-Date: 2022-12-25T15:49:19.172Z
+date: 2022-12-25T15:49:19.172Z
+link: /blog/2022-12-21-my-first-blog-post
 tags:
   - post
 image: /assets/media/fancy-red-dress.webp
