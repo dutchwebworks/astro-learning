@@ -50,24 +50,8 @@ const { title, description, permalink } = Astro.props;
 </html>
 
 <style>
-body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 0;
-}
-
-h1 {
-    color: hotpink;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
 .wrapper {
-    max-width: 600px;
+    max-width: var(--site-width);
     padding: 0 20px;
     margin: 0 auto;
 }	

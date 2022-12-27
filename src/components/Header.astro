@@ -17,28 +17,28 @@ const currentPath = pathname.slice(1); // remove the first "/"
 header {
     margin: 20px 0;
     padding: 0 0 20px 0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--body-color-alt);
 }
 header menu {
+    display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
-    display: flex;
 }
 header li {
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 header li + li {
     margin-left: 10px;
 }
 
 header a {
-    color: deepskyblue;    
+    color: var(--secondary-brand);
 }
 
 header a.is-active,
 header a:hover {
-    color: hotpink;    
+    color: var(--primary-brand);
 }
 </style>
