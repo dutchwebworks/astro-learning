@@ -38,12 +38,12 @@ const permalink = `${Astro.site.href}${BLOG_PATH}/${slug}`;
     </main>
 </BaseLayout>
 
-<style is:global>
+<style>
 h1 {
   color: hotpink;
   font-size: 3rem;
 }
-h2 {
+:global(h2) {
   color: deepskyblue;
   font-size: 2rem;
   border-bottom: 1px solid #ddd;
