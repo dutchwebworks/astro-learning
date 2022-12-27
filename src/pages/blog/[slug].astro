@@ -24,9 +24,11 @@ const permalink = `${Astro.site.href}${BLOG_PATH}/${slug}`;
 
 <BaseLayout title={title} description={description} permalink={permalink}>
     <main>
-        <p>Date: {pubDate}</p>
+        <div class="flex justify-between">
+          <p class="m-0">By: {author}</p>
 
-        <p>By: {author}</p>
+          <p class="m-0">Date: {pubDate}</p>
+        </div>
 
         <h1>{title}</h1>
 
