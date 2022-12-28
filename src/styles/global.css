@@ -6,6 +6,7 @@
     --body-text-color-alt: #333;
     --primary-font: "Gill Sans", Helvetica, sans-serif;
     --site-max-width: 600px;
+    color-scheme: light dark;
 }
 
 .dark-mode {
