@@ -1,0 +1,4 @@
+[[redirects]]
+    from = "/theme.css"
+    to = ".netlify/functions/theme"
+    status = 200

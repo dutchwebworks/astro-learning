@@ -1,28 +1,28 @@
-const toggleDarkModeBtn = document.getElementById("toggleDarkMode");
-const darkModeClass = "dark-mode";
-const darkModeStorageKey = darkModeClass;
-let darkMode = localStorage.getItem(darkModeStorageKey);
+const darkModeButton = document.getElementById("toggleDarkMode");
+const themeModeCookieName = "theme";
+const darkModeCssFile = "dark-mode.css";
 
-const enableDarkMode = () => {
-  document.body.classList.add(darkModeClass);
-  localStorage.setItem(darkModeStorageKey, "enabled");
-};
-
-const disableDarkMode = () => {
-  document.body.classList.remove(darkModeClass);
-  localStorage.setItem(darkModeStorageKey, "disabled");
-};
-
-if (darkMode === "enabled") {
-  enableDarkMode();
+function setCookie(name, value) {
+  document.cookie = name + "=" + value + "; Path=/;";
 }
 
-toggleDarkModeBtn.addEventListener("click", (e) => {
-  darkMode = localStorage.getItem(darkModeStorageKey);
+function getCookie(name) {
+  let match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+  if (match) return match[2];
+}
 
-  if (darkMode === "disabled") {
-    enableDarkMode();
+function deleteCookie(name) {
+  document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+}
+
+darkModeButton.addEventListener("click", () => {
+  const currentMode = getCookie(themeModeCookieName);
+
+  if (currentMode == undefined) {
+    setCookie(themeModeCookieName, darkModeCssFile);
   } else {
-    disableDarkMode();
+    deleteCookie(themeModeCookieName);
   }
+
+  location.reload();
 });

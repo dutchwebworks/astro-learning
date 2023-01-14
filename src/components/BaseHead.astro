@@ -19,7 +19,9 @@ const rssLink = `${Astro.site.href}rss.xml`;
 
 <title>{title} - {SITE_TITLE}</title>
 
-<meta name="description" content={description}>
+<meta name="description" content={description} />
+
+<meta name="color-scheme" content="light dark" />
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -28,5 +30,9 @@ const rssLink = `${Astro.site.href}rss.xml`;
 <link rel="canonical" href={permalink}>
 
 <link rel="alternate" type="application/rss+xml" title="Subscribe to my blog" href={rssLink} />
+
+<link is:inline rel="stylesheet" href="/theme.css">
+
+<script is:inline src="/js/darkmode.js" defer></script>
 
 <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

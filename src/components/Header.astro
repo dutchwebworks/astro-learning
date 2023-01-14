@@ -2,6 +2,8 @@
 const pathname = new URL(Astro.request.url).pathname;
 const activeClassname = "is-active"
 const currentPath = pathname.slice(1); // remove the first "/"
+
+
 ---
 
 <header class="flex justify-between">
@@ -12,6 +14,8 @@ const currentPath = pathname.slice(1); // remove the first "/"
             <li><a href="/about" class={currentPath.startsWith('about') ? activeClassname : ""}>About</a></li>
         </menu>
     </nav>
+
+    <button id="toggleDarkMode" class="toggleDarkMode">Toggle Dark-mode</button>
 </header>
 
 <style>
@@ -48,7 +52,7 @@ header a:hover {
     color: var(--primary-brand-color);
 }
 
-#toggleDarkMode {
+.toggleDarkMode {
     border: 1px solid var(--body-text-color);
     background-color: transparent;
     font-size: .8rem;

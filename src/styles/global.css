@@ -1,17 +1,9 @@
 :root {
-    --body-bg-color: #fff;
     --primary-brand-color: deepskyblue;
     --secondary-brand-color: hotpink;
-    --body-text-color: #999;
-    --body-text-color-alt: #333;
     --primary-font: "Gill Sans", Helvetica, sans-serif;
     --site-max-width: 600px;
-}
-
-.dark-mode {
-    --body-bg-color: #333;
-    --body-text-color: #fff;
-    --body-text-color-alt: #aaa;
+    color-scheme: light dark;
 }
 
 body {
