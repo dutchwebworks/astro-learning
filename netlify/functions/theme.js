@@ -11,13 +11,14 @@ exports.handler = async (event, context) => {
         --body-text-color-alt: #aaa;
     }`;
 
-    const currentTheme = event.headers.cookie ? event.headers.cookie.split("=")[1] || "light" : "light";
+    // const currentTheme = event.headers.cookie ? event.headers.cookie.split("=")[1] || "light" : "light";
+    currentTheme = "dark";
 
     return {
         statusCode: 200,
         headers: {
             "Access-Control-Allow-Origin": "*",
-            'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Headers': 'Content-Type',
             "Content-Type": "text/css",
         },
         body: theme[currentTheme]
