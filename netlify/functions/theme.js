@@ -16,6 +16,7 @@ exports.handler = async (event, context) => {
     return {
         statusCode: 200,
         headers: {
+            'Access-Control-Allow-Origin': '*',
             "Content-Type": "text/css",
         },
         body: theme[currentTheme]
