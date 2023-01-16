@@ -1,4 +1,4 @@
 [[redirects]]
-    from = "/theme.css"
+    from = "/assets/css/theme.css"
     to = ".netlify/functions/theme"
     status = 200

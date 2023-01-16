@@ -1,6 +1,6 @@
 const darkModeButton = document.getElementById("toggleDarkMode");
 const themeModeCookieName = "theme";
-const darkModeCssFile = "dark-mode.css";
+const themeModeCookieValue = "dark";
 
 function setCookie(name, value) {
   document.cookie = name + "=" + value + "; Path=/;";
@@ -19,7 +19,7 @@ darkModeButton.addEventListener("click", () => {
   const currentMode = getCookie(themeModeCookieName);
 
   if (currentMode == undefined) {
-    setCookie(themeModeCookieName, darkModeCssFile);
+    setCookie(themeModeCookieName, themeModeCookieValue);
   } else {
     deleteCookie(themeModeCookieName);
   }

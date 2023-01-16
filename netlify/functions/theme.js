@@ -1,11 +1,23 @@
-exports.handler = async(event, context) => {
-    let default_theme = "light-mode.css";
-    let theme_name = event.headers.cookie ? event.headers.cookie.match(/(?<=theme=)[^;]+/g) || default_theme : default_theme
+exports.handler = async (event, context) => {
+    const theme = new Array();
+    theme.light = `:root {
+        --body-bg-color: #fff;
+        --body-text-color: #999;
+        --body-text-color-alt: #333;
+    }`;
+    theme.dark = `:root {
+        --body-bg-color: #333;
+        --body-text-color: #fff;
+        --body-text-color-alt: #aaa;
+    }`;
+
+    const currentTheme = event.headers.cookie ? event.headers.cookie.split("=")[1] || "light" : "light";
 
     return {
-        statusCode: 301,
+        statusCode: 200,
         headers: {
-            "location": event.path.replace("theme.css", "assets/css/" + theme_name)
-        }
-    };
+            "Content-Type": "text/css",
+        },
+        body: theme[currentTheme]
+  };
 };
