@@ -10,6 +10,10 @@ Learning about Astro static-site-generator. With a Netlify deployment and CMS fo
 * [Astro Crash Course #1 - Layouts, Astro Components, Styles, & Pages](https://www.youtube.com/watch?v=cbYr75_R15M), by Little Sticks
 * [Astro Crash Course #2 - Images, React and Svelte Components, & Blog Posts](https://www.youtube.com/watch?v=xcDUpe1NfCQ), by Little Sticks
 
+## Using NVM for the correct NodeJS version
+
+    nvm install
+
 ## Initial install
 
     npm install
