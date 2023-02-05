@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import getPostData from '@/utils/getPostData';
-import { BLOG_PATH } from '@/config';
+import { BLOG_PATH } from '@/consts';
 
 export async function getStaticPaths() {
   const posts = await Astro.glob('../../blog-posts/*.md');
