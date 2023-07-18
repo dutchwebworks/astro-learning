@@ -2,29 +2,36 @@
 import { SITE_TITLE } from '../consts';
 ---
 
-<footer class="flex justify-between py-2 mt-5">
-    <p class="m-0">&copy; 2023 - {SITE_TITLE}</p>
+<footer>
+    <span>{SITE_TITLE}</span>
+    
+    <a href="https://github.com/dutchwebworks/astro-learning" target="_blank">
+        View on Github
 
-    <p class="m-0"><a href="https://github.com/dutchwebworks/astro-learning" target="_blank">View on Github</a></p>
+        <img src="/assets/img/github-logo.svg" width="16" height="16" alt="Github">
+    </a>
 </footer>
 
 <style>
 footer {
-    font-size: .8rem;
-    border-top: 1px solid var(--body-text-color);
     transition: border-top-color .5s;
-}
-
-footer p {
-    font-size: inherit;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+    padding-block-start: 10px;
+    margin-block-start: 20px;
+    font-size: .8rem;
 }
 
 footer a {
-    color: var(--body-text-color);
+    color: var(--secondary-brand-color);
     transition: color .5s;
+    display: flex;
+    gap: 5px;
+    align-items: center;
 }
 
 footer a:hover {
-    color: var(--secondary-brand-color);
+    color: var(--primary-brand-color);
 }
 </style>
