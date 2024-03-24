@@ -1,3 +1,8 @@
+[build]
+  command = "npm run build"
+  functions = "netlify/functions"
+  publish = "dist"
+  
 [[redirects]]
     from = "/assets/css/theme.css"
     to = "/.netlify/functions/theme"
