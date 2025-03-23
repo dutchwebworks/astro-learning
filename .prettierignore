@@ -1,0 +1,7 @@
+dist/
+public/
+dev/
+doc/
+package-lock.json
+yarn.lock
+node_modules/

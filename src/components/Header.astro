@@ -1,17 +1,15 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
-const activeClassname = "is-active"
+const activeClassname = "is-active";
 const currentPath = pathname.slice(1); // remove the first "/"
-
-
 ---
 
 <header class="flex justify-between">
     <nav>
         <menu>
             <li><a href="/" class={currentPath === "" ? activeClassname : ""}>Home</a></li>
-            <li><a href="/blog" class={currentPath.startsWith('blog') ? activeClassname : ""}>Blog</a></li>
-            <li><a href="/about" class={currentPath.startsWith('about') ? activeClassname : ""}>About</a></li>
+            <li><a href="/blog" class={currentPath.startsWith("blog") ? activeClassname : ""}>Blog</a></li>
+            <li><a href="/about" class={currentPath.startsWith("about") ? activeClassname : ""}>About</a></li>
         </menu>
     </nav>
 
@@ -19,47 +17,52 @@ const currentPath = pathname.slice(1); // remove the first "/"
 </header>
 
 <style>
-header {
-    position: sticky;
-    top: 0;
-    margin: 0 0 20px 0;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid var(--body-text-color-alt);
-    background-color: var(--body-bg-color);
-    transition: background-color .5s, color .5s, border-bottom-color .5s;
-}
-header menu {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-header li {
-    margin: 0;
-    padding: 0;
-}
-header li + li {
-    margin-left: 10px;
-}
+    header {
+        position: sticky;
+        top: 0;
+        margin: 0 0 20px 0;
+        padding: 20px 0 20px 0;
+        border-bottom: 1px solid var(--body-text-color-alt);
+        background-color: var(--body-bg-color);
+        transition:
+            background-color 0.5s,
+            color 0.5s,
+            border-bottom-color 0.5s;
+    }
+    header menu {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    header li {
+        margin: 0;
+        padding: 0;
+    }
+    header li + li {
+        margin-left: 10px;
+    }
 
-header a {
-    color: var(--secondary-brand-color);
-    transition: color .5s;
-}
+    header a {
+        color: var(--secondary-brand-color);
+        transition: color 0.5s;
+    }
 
-header a.is-active,
-header a:hover {
-    color: var(--primary-brand-color);
-}
+    header a.is-active,
+    header a:hover {
+        color: var(--primary-brand-color);
+    }
 
-.toggleDarkMode {
-    border: 1px solid var(--body-text-color);
-    background-color: transparent;
-    font-size: .8rem;
-    padding: 5px 10px;
-    color: var(--body-text-color);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: border-color .5s, color .5s;
-}
+    .toggleDarkMode {
+        border: 1px solid var(--body-text-color);
+        background-color: transparent;
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        color: var(--body-text-color);
+        border-radius: 8px;
+        cursor: pointer;
+        transition:
+            border-color 0.5s,
+            color 0.5s;
+    }
 </style>

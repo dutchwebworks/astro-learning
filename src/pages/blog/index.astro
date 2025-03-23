@@ -1,12 +1,12 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE_TITLE, BLOG_PATH } from '../../consts';
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SITE_TITLE, BLOG_PATH } from "../../consts";
 
-const title = 'Blog';
-const description = 'Latest blog articles';
+const title = "Blog";
+const description = "Latest blog articles";
 const permalink = `${Astro.site.href}${BLOG_PATH}`;
 
-let allPosts = await Astro.glob('../../blog-posts/*.md');
+let allPosts = await Astro.glob("../../blog-posts/*.md");
 allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 ---
 
@@ -14,22 +14,26 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
     <main>
         <h1>Blog posts - {SITE_TITLE}</h1>
 
-        {allPosts.map((post, index) => {
-            const href = `/${BLOG_PATH}/${post.file.split('/').pop().split('.').shift()}`;
-            return (
-                <div>
-                    { index !== 0 && <hr /> }
-                    <div class="post-item">
-                        <h2><a href={href}>{post.frontmatter.title}</a></h2>
+        {
+            allPosts.map((post, index) => {
+                const href = `/${BLOG_PATH}/${post.file.split("/").pop().split(".").shift()}`;
+                return (
+                    <div>
+                        {index !== 0 && <hr />}
+                        <div class="post-item">
+                            <h2>
+                                <a href={href}>{post.frontmatter.title}</a>
+                            </h2>
 
-                        <p>{post.frontmatter.description}</p>
+                            <p>{post.frontmatter.description}</p>
 
-                        <p class="post-item-footer">
-                            <span class="post-item-date">— {post.frontmatter.pubDate}</span>
-                        </p>
+                            <p class="post-item-footer">
+                                <span class="post-item-date">— {post.frontmatter.pubDate}</span>
+                            </p>
+                        </div>
                     </div>
-                </div>
-            )
-        })}
+                );
+            })
+        }
     </main>
 </BaseLayout>

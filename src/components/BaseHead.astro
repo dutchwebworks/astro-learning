@@ -2,12 +2,12 @@
 import "../styles/tailwind.css";
 import "../styles/global.css";
 
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 export interface Props {
-  title: string;
-  description: string;
-  permalink: string;
+    title: string;
+    description: string;
+    permalink: string;
 }
 
 const { title, description, permalink } = Astro.props;
@@ -26,9 +26,9 @@ const { title, description, permalink } = Astro.props;
 
 <meta name="generator" content={Astro.generator} />
 
-<link rel="canonical" href={permalink}>
+<link rel="canonical" href={permalink} />
 
-<link is:inline rel="stylesheet" href="/assets/css/theme.css">
+<link is:inline rel="stylesheet" href="/assets/css/theme.css" />
 
 <script is:inline src="/js/darkmode.js" defer></script>
 

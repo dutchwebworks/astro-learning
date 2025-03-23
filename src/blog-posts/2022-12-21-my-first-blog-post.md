@@ -6,7 +6,7 @@ author: Dennis Burger
 date: 2022-12-25T15:49:19.172Z
 link: /blog/2022-12-21-my-first-blog-post
 tags:
-  - post
+    - post
 image: /assets/media/fancy-red-dress.webp
 imageAlt: Woman in fancy red dress
 ---

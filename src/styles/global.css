@@ -12,14 +12,16 @@ body {
     line-height: 1.5;
     margin: 0;
     background-color: var(--body-bg-color);
-    transition: background-color .5s, color .5s;
+    transition:
+        background-color 0.5s,
+        color 0.5s;
 }
 
 h1 {
     margin-bottom: 10px;
     color: var(--primary-brand-color);
     font-size: 3rem;
-    transition: color .5s;
+    transition: color 0.5s;
 }
 
 h2 {
@@ -27,7 +29,9 @@ h2 {
     font-size: 2rem;
     border-bottom: 1px solid var(--body-text-color);
     padding-bottom: 10px;
-    transition: border-bottom-color .5s, color .5s;
+    transition:
+        border-bottom-color 0.5s,
+        color 0.5s;
 }
 
 h2 a {
@@ -42,7 +46,7 @@ p {
     color: var(--body-text-color);
     font-size: 1.2rem;
     line-height: 1.5;
-    transition: color .5s;
+    transition: color 0.5s;
 }
 
 img {

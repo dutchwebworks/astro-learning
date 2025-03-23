@@ -1,17 +1,28 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const title = "About";
-const description = "A little bit about me"
+const description = "A little bit about me";
 const permalink = `${Astro.site.href}about`;
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
     <main>
-        <img src="/assets/img/placeholder-about.jpg" class="mt-3" width="600" height="337.6" alt="Anonymous person">
-        
+        <img src="/assets/img/placeholder-about.jpg" class="mt-3" width="600" height="337.6" alt="Anonymous person" />
+
         <h1>About me</h1>
 
-        <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet maxime animi dolor corrupti quo nisi sed inventore iure natus dignissimos!</span><span>Ducimus vero quidem sit, corrupti accusamus facere temporibus quam voluptatum cumque, quasi vel eius nobis, quae incidunt exercitationem sapiente deserunt.</span><span>Illo perferendis quisquam numquam laborum error. Cupiditate aut et minima, doloribus, iure, nesciunt maiores at itaque cum sed numquam suscipit!</span></p>
+        <p>
+            <span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet maxime animi dolor corrupti quo nisi sed inventore iure natus
+                dignissimos!
+            </span><span>
+                Ducimus vero quidem sit, corrupti accusamus facere temporibus quam voluptatum cumque, quasi vel eius nobis, quae incidunt
+                exercitationem sapiente deserunt.
+            </span><span>
+                Illo perferendis quisquam numquam laborum error. Cupiditate aut et minima, doloribus, iure, nesciunt maiores at itaque cum sed numquam
+                suscipit!
+            </span>
+        </p>
     </main>
 </BaseLayout>
